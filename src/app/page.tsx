@@ -1,66 +1,50 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import ScrollBar from "./components/ScrollBar";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <ScrollBar />
+      <div className="video-container">
+        <video autoPlay muted loop id="bg-video">
+        <source src="output.mp4" type="video/mp4"/>
+        Your browser does not support HTML5 video.
+      </video>
+      </div>
+      <section id="hero-section">
+        <div className="top">
+          <div className="left">
+            <h1>FULLSTACK <br/>
+            <span>DEVELOPER</span>
+            </h1>
+            <p>Hey! I'm <span>Ruzul</span>, a fullstack developer with 2+ years of experience working in corporate and freelanding, building highly scalable and reliable web and mobile solutions.</p>
+            <button>HIRE ME</button>
+          </div>
+          <div className="right"></div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="bottom">
+          <div className="left"></div>
+          <div className="right">
+            <div>
+              <h2>2+</h2>
+              <p>Years of Experience</p>
+            </div>
+            <div>
+              <h2>8+</h2>
+              <p>Projects Delivered</p>
+            </div>
+            <div>
+              <h2>10K+</h2>
+              <p>Hours Developing</p>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+      <section id="about-me"></section>
+      <section id="tech"></section>
+      <section id="projects"></section>
+      <section id="contact"></section>
+    </main> 
   );
 }
+
+export default Home;
